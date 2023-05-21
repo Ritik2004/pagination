@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react";
 import axios from 'axios'
 import "./index.css"
+const url = "http://jsonplaceholder.typicode.com/todos"
 
 function App() {
   //This state we are taking to pass the number of list we want to take
@@ -11,7 +12,7 @@ function App() {
   const[currentPage, setCurrentPage] = useState(1);
  
   useEffect(()=>{
-    axios.get("http://jsonplaceholder.typicode.com/todos")
+    axios.get(url)
     .then((res)=>setTodo(res.data))
     },[])
 
